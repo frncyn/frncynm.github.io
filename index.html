@@ -12,7 +12,10 @@
         }
 
         html, body {
-            overflow-x: hidden; /* ✅ Prevent horizontal scrolling */
+        overflow-x: auto; /* allow horizontal scroll */
+        overflow-y: auto; /* allow vertical scroll */
+        height: 100%;
+
         }
         
         body {
@@ -217,96 +220,62 @@
 
 <div class="max-w-6xl mx-auto mt-5 p-6 text-center">
   <div class="row align-items-center">
-  <!-- 🎮 Watch It in Action -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Watch It in Action</h2>
-    <div class="row align-items-center">
-      
-      <!-- 🎥 Left side: Video -->
-      <div class="col-md-6 mb-4 mb-md-0 text-center">
-        <video controls width="100%" class="rounded shadow">
-          <source src="./assets/nintendo_ds_showcase.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+  <!-- 🎥 Left side: Video -->
+<div class="col-md-6 mb-4 mb-md-0">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4"><b>Watch It in Action</b></h2>
+  <video controls class="rounded shadow" style="width: 100%; max-width: 480px; height: auto;">
+    <source src="./assets/nintendo_ds_showcase.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-      <!-- 🕹️ Right side: Features -->
-      <div class="col-md-6">
-        <div class="row text-center align-items-start feature-row">
-          
-          <!-- Feature 1 -->
-          <div class="col-12 col-sm-4 d-flex flex-column align-items-center mb-4 mb-sm-0">
-            <img src="./assets/nintendo_dual_screen.png" alt="Dual Screens" class="mb-3 feature-icon">
-            <h5><b>Dual Screens</b></h5>
-            <p class="feature-text">
-              Play on two displays at once for immersive gameplay.
-            </p>
-          </div>
+<!-- 🕹️ Right side: Features -->
+<div class="col-md-6">
 
-          <!-- Feature 2 -->
-          <div class="col-12 col-sm-4 d-flex flex-column align-items-center mb-4 mb-sm-0">
-            <img src="./assets/touchscreen_icon.png" alt="Touchscreen" class="mb-3 feature-icon">
-            <h5><b>Touchscreen</b></h5>
-            <p class="feature-text">
-              Interact directly using the stylus on the bottom screen.
-            </p>
-          </div>
 
-          <!-- Feature 3 -->
-          <div class="col-12 col-sm-4 d-flex flex-column align-items-center">
-            <img src="./assets/audio_icon.png" alt="Audio" class="mb-3 feature-icon">
-            <h5><b>Audio</b></h5>
-            <p class="feature-text">
-              The console includes stereo speakers designed to produce a virtual surround sound experience.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
+  <div class="row text-center align-items-start" style="margin-left: -80px;">
+    
+    <!-- Feature 1 -->
+    <div class="col-4 d-flex flex-column align-items-center">
+      <img src="./assets/nintendo_dual_screen.png" alt="Dual Screens" class="mb-3 feature-icon">
+      <h5><b>Dual Screens</b></h5>
+      <p class="feature-text">Play on two displays at once for immersive gameplay.</p>
     </div>
-  </div>
-</section>
 
-<!-- ✨ Styles -->
+    <!-- Feature 2 -->
+    <div class="col-4 d-flex flex-column align-items-center">
+      <img src="./assets/touchscreen_icon.png" alt="Touchscreen" class="mb-3 feature-icon">
+      <h5><b>Touchscreen</b></h5>
+      <p class="feature-text">Interact directly using the stylus on the bottom screen.</p>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="col-4 d-flex flex-column align-items-center">
+      <img src="./assets/audio_icon.png" alt="Audio" class="mb-3 feature-icon">
+      <h5><b>Audio</b></h5>
+      <p class="feature-text">The console includes stereo speakers designed to produce a virtual surround sound experience.</p>
+    </div>
+    
+  </div>
+</div>
+
+
 <style>
 .feature-icon {
-  width: 80px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.feature-icon:hover {
-  transform: scale(1.1);
+  height: 120px;
+  width: auto;
+  object-fit: contain;
 }
 
 .feature-text {
-  font-size: 0.95rem;
-  color: #444;
-  max-width: 220px;
+  min-height: 60px;
+  max-width: 250px;
 }
 
-/* ✅ Desktop and tablet: slight left offset for balance */
-@media (min-width: 768px) {
-  .feature-row {
-    margin-left: -40px;
-  }
-}
-
-/* ✅ Mobile: reset alignment and center icons */
-@media (max-width: 767px) {
-  .feature-row {
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  .feature-text {
-    max-width: 80%;
-  }
+.col-4 {
+  padding: 20px 10px;
 }
 </style>
-
   </div>
 
 </div>
