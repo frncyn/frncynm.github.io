@@ -3,63 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miel's Showcase</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Nintendo DS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         :root {
             --custom-color: #F5DCED;
         }
+
+        html, body {
+            overflow-x: hidden; /* ✅ Prevent horizontal scrolling */
+        }
         
         body {
             background-color: #F5DCED;
-            min-height: 150vh; 
+            min-height: 150vh;
+            font-family: 'Times New Roman', serif;
         }
 
         .btn-custom {
-            background-color: var(--custom-color); 
+            background-color: var(--custom-color);
             border-color: var(--custom-color);
             color: black;
             font-weight: 500;
         }
-        
+
         .btn-custom:hover {
             background-color: color-mix(in srgb, var(--custom-color) 80%, black);
             border-color: color-mix(in srgb, var(--custom-color) 80%, black);
             color: black;
         }
-        
+
         .btn-custom:active, .btn-custom:focus {
             background-color: color-mix(in srgb, var(--custom-color) 60%, black) !important;
             border-color: color-mix(in srgb, var(--custom-color) 60%, black) !important;
             box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--custom-color) 40%, black) !important;
         }
+
         .navbar-brand {
             color: #333 !important;
         }
-        
+
         .carousel-item img {
-            max-height: 400px; 
-            object-fit: contain; 
+            max-height: 400px;
+            object-fit: contain;
             width: auto;
             margin: 0 auto;
             display: block;
         }
 
         .navbar-brand img {
-            height: 50px; 
+            height: 50px;
             width: auto;
-            vertical-align: middle; 
+            vertical-align: middle;
         }
+
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             filter: invert(1) grayscale(100%);
         }
-
-        body {
-        background-color: #F5DCED;
-        min-height: 150vh; 
-        font-family: 'Times New Roman',serif; 
-    }
     </style>
 </head>
 
@@ -139,57 +141,142 @@
         </div>
     </div>
     <div class="max-w-4xl mx-auto mt-5 p-6 rounded-xl">
-    <h2 class="text-2xl font-semibold text-gray-800 mb- text-start text-center"><b>Take a Look</b></h2>
+
 </div>
         <div class="max-w-4xl mx-auto mt-5 p-6 bg-white rounded-xl shadow-lg">
         
-        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="max-w-4xl mx-auto mt-5 p-6 rounded-xl shadow-lg carousel-container">
 
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
+  <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+    </div>
 
-                <div class="carousel-inner p-4">
-                    <div class="carousel-item active">
-                        <img 
-                            src="./assets/nintendo.jpg"
-                            class="d-block w-100 rounded-lg shadow-md" 
-                            alt="Detail Shot 1"
-                        >
-                    </div>
+    <div class="carousel-inner p-4">
+      <div class="carousel-item active">
+        <img src="./assets/nintendo.png" class="d-block w-100 rounded-4 shadow-md carousel-image" alt="Detail Shot 1">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/nintendo2.png" class="d-block w-100 rounded-4 shadow-md carousel-image" alt="Detail Shot 2">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/nintendoclose.png" class="d-block w-100 rounded-4 shadow-md carousel-image" alt="Detail Shot 3">
+      </div>
+    </div>
 
-                    <div class="carousel-item">
-                        <img 
-                            src="./assets/nintendo2.jpg"
-                            class="d-block w-100 rounded-lg shadow-md" 
-                            alt="Detail Shot 2"
-                        >
-                    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 
-                    <div class="carousel-item">
-                        <img 
-                            src="./assets/nintendoclose.jpg" 
-                            class="d-block w-100 rounded-lg shadow-md" 
-                            alt="Detail Shot 3"
-                        >
-                    </div>
-                </div>
+<style>
+.carousel-container {
+  background-color: #f8e6f1; /* soft pink tone */
+  border: 2px solid #f3cce2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
+.carousel-image {
+  max-height: 450px;
+  object-fit: contain;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active .carousel-image {
+  transform: scale(1.02);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) grayscale(100%);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-indicators button {
+  background-color: #d17ba5;
+}
+
+.carousel-indicators .active {
+  background-color: #a84b7a;
+}
+</style>
+
         
        <div class="my-5"></div>
-        
+
+<div class="max-w-6xl mx-auto mt-5 p-6 text-center">
+  <div class="row align-items-center">
+  <!-- 🎥 Left side: Video -->
+<div class="col-md-6 mb-4 mb-md-0">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4"><b>Watch It in Action</b></h2>
+  <video controls class="rounded shadow" style="width: 100%; max-width: 480px; height: auto;">
+    <source src="./assets/nintendo_ds_showcase.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- 🕹️ Right side: Features -->
+<div class="col-md-6">
+
+
+  <div class="row text-center align-items-start" style="margin-left: -80px;">
+    
+    <!-- Feature 1 -->
+    <div class="col-4 d-flex flex-column align-items-center">
+      <img src="./assets/nintendo_dual_screen.png" alt="Dual Screens" class="mb-3 feature-icon">
+      <h5><b>Dual Screens</b></h5>
+      <p class="feature-text">Play on two displays at once for immersive gameplay.</p>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="col-4 d-flex flex-column align-items-center">
+      <img src="./assets/touchscreen_icon.png" alt="Touchscreen" class="mb-3 feature-icon">
+      <h5><b>Touchscreen</b></h5>
+      <p class="feature-text">Interact directly using the stylus on the bottom screen.</p>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="col-4 d-flex flex-column align-items-center">
+      <img src="./assets/audio_icon.png" alt="Audio" class="mb-3 feature-icon">
+      <h5><b>Audio</b></h5>
+      <p class="feature-text">The console includes stereo speakers designed to produce a virtual surround sound experience.</p>
+    </div>
+    
+  </div>
+</div>
+
+
+<style>
+.feature-icon {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.feature-text {
+  min-height: 60px;
+  max-width: 250px;
+}
+
+.col-4 {
+  padding: 20px 10px;
+}
+</style>
+  </div>
+
+</div>
+
 <div class="max-w-4xl mx-auto mt-5 p-6 rounded-xl">
     <h2 class="text-2xl font-semibold text-gray-800 mb- text-start text-center"><b>Nintendo DS Key Features</b></h2>
 </div>
