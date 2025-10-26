@@ -11,8 +11,15 @@
             --custom-color: #F5DCED;
         }
 
+        html {
+            /* * NEW: This single line enables smooth scrolling for all anchor links.
+             * The page will now animate when jumping to a section ID.
+             */
+            scroll-behavior: smooth;
+        }
+
         html, body {
-        overflow-x: hidden; /* Changed from 'auto' to 'hidden' to prevent horizontal scrolling */
+        overflow-x: hidden; 
         overflow-y: auto; 
         height: 100%;
 
@@ -46,15 +53,7 @@
         .navbar-brand {
             color: #333 !important;
         }
-
-        .carousel-item img {
-            max-height: 400px;
-            object-fit: contain;
-            width: auto;
-            margin: 0 auto;
-            display: block;
-        }
-
+        
         .navbar-brand img {
             height: 50px;
             width: auto;
@@ -143,6 +142,58 @@
             font-size: 1.25rem;
             margin-top: 15px;
         }
+
+        /* CUSTOM CAROUSEL STYLES */
+        .carousel-container {
+            background-color: #f8e6f1; /* soft pink tone */
+            border: 2px solid #f3cce2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* New fixed height style for the images */
+        .carousel-img-fixed-height {
+            height: 450px; /* Lock the height of the image */
+            width: 100%; /* Ensure it spans the container width */
+            object-fit: contain; /* Use contain to show the whole image without cropping */
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .carousel-item {
+            height: 450px; /* Also lock the height of the item container to prevent collapse */
+        }
+
+        .carousel-item.active .carousel-img-fixed-height {
+            transform: scale(1.02);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1) grayscale(100%);
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .carousel-indicators button {
+            background-color: #d17ba5;
+        }
+
+        .carousel-indicators .active {
+            background-color: #a84b7a;
+        }
+
+
+        /* CARD CUSTOM STYLES */
+        .card-img-custom {
+            height: 400px;
+            object-fit: cover; 
+        }
+
+        .card-fixed-height {
+            height: 600px; 
+        }
+
     </style>
 </head>
 
@@ -151,7 +202,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
     <div class="container d-flex"> 
         
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#home-section">
             <img 
                 src="./assets/logo%20no%20bg.png"
                 alt="Miel's Brand Logo"
@@ -166,16 +217,16 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0"> 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#home-section">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Entertainment</a>
+                    <a class="nav-link" href="#entertainment-section">Entertainment</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Specs</a>
+                    <a class="nav-link" href="#features-section">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Support</a>
+                    <a class="nav-link" href="#footer-section">Support</a>
                 </li>
             </ul>
         </div>
@@ -185,7 +236,7 @@
     
     <main class="p-8">
     
-    <div class="max-w-4xl mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg">
+    <div class="max-w-4xl mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg" id="home-section">
         <h1 class="text-3xl font-semibold text-gray-800 mb-4 text-center"><b>Nintendo DS Lite Coral Pink</b></h1>
     </div>
     
@@ -230,13 +281,13 @@
 
     <div class="carousel-inner p-4">
       <div class="carousel-item active">
-        <img src="./assets/nintendo.png" class="d-block w-100 rounded-4 shadow-md carousel-image" alt="Detail Shot 1">
+        <img src="./assets/nintendo.png" class="d-block w-100 rounded-4 shadow-md carousel-img-fixed-height" alt="Detail Shot 1">
       </div>
       <div class="carousel-item">
-        <img src="./assets/nintendo2.png" class="d-block w-100 rounded-4 shadow-md carousel-image" alt="Detail Shot 2">
+        <img src="./assets/nintendo2.png" class="d-block w-100 rounded-4 shadow-md carousel-img-fixed-height" alt="Detail Shot 2">
       </div>
       <div class="carousel-item">
-        <img src="./assets/nintendoclose.png" class="d-block w-100 rounded-4 shadow-md carousel-image" alt="Detail Shot 3">
+        <img src="./assets/nintendoclose.png" class="d-block w-100 rounded-4 shadow-md carousel-img-fixed-height" alt="Detail Shot 3">
       </div>
     </div>
 
@@ -251,40 +302,6 @@
   </div>
 </div>
 
-<style>
-.carousel-container {
-    background-color: #f8e6f1; /* soft pink tone */
-    border: 2px solid #f3cce2;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-image {
-    max-height: 450px;
-    object-fit: contain;
-    transition: transform 0.6s ease-in-out;
-}
-
-.carousel-item.active .carousel-image {
-    transform: scale(1.02);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1) grayscale(100%);
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-
-.carousel-indicators button {
-    background-color: #d17ba5;
-}
-
-.carousel-indicators .active {
-    background-color: #a84b7a;
-}
-</style>
 
         
         <div class="my-5"></div>
@@ -322,25 +339,10 @@
     </div>
 </div>
 
-<style>
-.feature-icon {
-    height: 150px;
-    width: auto;
-    object-fit: contain;
-}
 
-.feature-text {
-    min-height: 60px;
-    max-width: 250px;
-}
-
-.col-4 {
-    padding: 20px 10px;
-}
-</style>
 </div>
 
-<div class="container my-5">
+<div class="container my-5" id="entertainment-section">
     <div class="d-flex justify-content-between align-items-end mb-4">
         <h2 class="text-2xl font-semibold text-gray-800"><b>Explore by Character</b></h2>
         <a href="#" class="text-danger fw-bold">See all</a>
@@ -384,7 +386,8 @@
         </div>
     </div>
 </div>
-<div class="max-w-4xl mx-auto mt-5 p-6 rounded-xl">
+
+<div class="max-w-4xl mx-auto mt-5 p-6 rounded-xl" id="features-section">
     <h2 class="text-2xl font-semibold text-gray-800 mb- text-start text-center"><b>Nintendo DS Key Features</b></h2>
 </div>
 
@@ -425,23 +428,9 @@
         
     </div>
 </div>
-
-<style>
-
-.card-img-custom {
-    height: 400px;
-    object-fit: cover; 
-}
-
-.card-fixed-height {
-    height: 600px; 
-}
-
-
-</style>
     </main>
 
-    <footer class="footer mt-auto py-3">
+    <footer class="footer mt-auto py-3" id="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-3">
@@ -457,10 +446,10 @@
                 <div class="col-md-2 col-6 mb-3">
                     <h5 class="text-uppercase mb-3">Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Entertainment</a></li>
-                        <li><a href="#">Specs</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="#home-section">Home</a></li>
+                        <li><a href="#entertainment-section">Entertainment</a></li>
+                        <li><a href="#features-section">Features</a></li>
+                        <li><a href="#footer-section">Support</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-6 mb-3">
