@@ -12,9 +12,7 @@
         }
 
         html {
-            /* * NEW: This single line enables smooth scrolling for all anchor links.
-             * The page will now animate when jumping to a section ID.
-             */
+
             scroll-behavior: smooth;
         }
 
@@ -65,9 +63,8 @@
             filter: invert(1) grayscale(100%);
         }
 
-        /* Added Custom CSS for Footer */
         .footer {
-            background-color: #e9d9e2; /* A slightly darker shade of the body background for contrast */
+            background-color: #e9d9e2; 
             padding-top: 30px;
             padding-bottom: 20px;
             color: #333;
@@ -81,7 +78,7 @@
         }
 
         .footer a:hover {
-            color: #a84b7a; /* A strong color for hover state */
+            color: #a84b7a; 
             text-decoration: underline;
         }
 
@@ -94,13 +91,13 @@
         /* NEW STYLES FOR SHOP BY CHARACTER SECTION */
         .character-card {
             position: relative;
-            height: 350px; /* Fixed height for consistent look */
+            height: 350px;
             overflow: hidden;
             border-radius: 1rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            display: block; /* Make the entire card a clickable block */
+            display: block; 
             color: inherit;
         }
 
@@ -132,9 +129,10 @@
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.2); /* Subtle dark overlay for better text visibility */
-        }
+            background: rgba(0, 0, 0, 0.2); 
         
+        }
+
         .character-card-title {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 5px 15px;
@@ -145,21 +143,21 @@
 
         /* CUSTOM CAROUSEL STYLES */
         .carousel-container {
-            background-color: #f8e6f1; /* soft pink tone */
+            background-color: #f8e6f1;
             border: 2px solid #f3cce2;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* New fixed height style for the images */
         .carousel-img-fixed-height {
-            height: 450px; /* Lock the height of the image */
-            width: 100%; /* Ensure it spans the container width */
-            object-fit: contain; /* Use contain to show the whole image without cropping */
+            height: 450px; 
+            width: 100%; 
+            object-fit: contain; 
             transition: transform 0.6s ease-in-out;
         }
 
         .carousel-item {
-            height: 450px; /* Also lock the height of the item container to prevent collapse */
+            height: 450px; 
         }
 
         .carousel-item.active .carousel-img-fixed-height {
@@ -193,6 +191,25 @@
         .card-fixed-height {
             height: 600px; 
         }
+
+
+  
+.feature-icon {
+  width: 80px; 
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .feature-icon {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-icon {
+    width: 50px; 
+  }
+}
 
     </style>
 </head>
